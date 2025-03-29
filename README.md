@@ -27,9 +27,12 @@ The Sales Data API is designed to help businesses analyze their sales data effec
 
 It is built using NestJS, a progressive framework for building scalable server-side applications, and uses PostgreSQL for data storage.
 
-localhost:3000/data-loader/load-data?fileName=data.csv => To load the data from the csv file
+Data Loading
+To load data from a CSV file, use the following endpoint:
 
-Cron will run daily 2AM to update the data fro csv to database.
+text
+localhost:3000/data-loader/load-data?fileName=data.csv
+A cron job runs daily at 2 AM to update the data from the CSV file to the database.
 
 Features
 Total Revenue Calculation: Compute total revenue within a specified date range.
@@ -87,9 +90,9 @@ DATABASE_PORT=5432
 DATABASE_USERNAME=your_db_username
 DATABASE_PASSWORD=your_db_password
 DATABASE_NAME=sales_data
+Start the application:
 
-
-
+bash
 npm run start:dev
 Usage
 Once the application is running, you can access it at http://localhost:3000. Use tools like Postman or curl to interact with the API endpoints.
@@ -154,7 +157,7 @@ startDate: Start date for trend analysis.
 endDate: End date for trend analysis.
 
 Postman Collection
-To make it easier to test the API, I've included a Postman collection with pre-configured requests for all endpoints.
+To facilitate testing of the API, a Postman collection with pre-configured requests for all endpoints is included.
 
 How to Use the Collection:
 Download the attached Postman collection file (Sales_Data_API.postman_collection.json).
@@ -166,4 +169,3 @@ Go to File > Import, select the JSON file, and click "Import."
 Update base URLs in requests if necessary (e.g., replace {base_path} with your local or deployed URL).
 
 Use Postman to send requests and view responses.
-
