@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "d14e3aa8-2e0a-4f24-8964-f43d25f3058a",
+		"name": "Sales-data-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38014889"
+	},
+	"item": [
+		{
+			"name": "Load data",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/data-loader/load-data?fileName=data.csv",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"data-loader",
+						"load-data"
+					],
+					"query": [
+						{
+							"key": "fileName",
+							"value": "data.csv"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Total Revenue by date",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/revenue/total?startDate=2023-12-01&endDate=2025-03-29",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"revenue",
+						"total"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2023-12-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-03-29"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Revenue By Product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/revenue/by-product?startDate=2023-12-01&endDate=2025-03-29",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"revenue",
+						"by-product"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2023-12-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-03-29"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Revenue By Category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/revenue/by-category?startDate=2023-12-01&endDate=2025-03-29",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"revenue",
+						"by-category"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2023-12-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-03-29"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Revenue By Region",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/revenue/by-region?startDate=2023-12-01&endDate=2025-03-29&region=North America",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"revenue",
+						"by-region"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2023-12-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-03-29"
+						},
+						{
+							"key": "region",
+							"value": "North America"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
