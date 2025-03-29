@@ -1,99 +1,169 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+Sales Data API
+The Sales Data API is a RESTful API built with NestJS to help manage and analyze sales data efficiently. It provides endpoints for calculating total revenue, filtering by product, category, and region, and generating revenue trends over time.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This README provides detailed instructions on how to set up, use, and explore the API.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Table of Contents
+Overview
 
-## Description
+Features
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Technologies Used
 
-## Project setup
+Installation
 
-```bash
-$ npm install
-```
+Usage
 
-## Compile and run the project
+API Endpoints
 
-```bash
-# development
-$ npm run start
+Postman Collection
 
-# watch mode
-$ npm run start:dev
+Contributing
 
-# production mode
-$ npm run start:prod
-```
+License
 
-## Run tests
+Overview
+The Sales Data API is designed to help businesses analyze their sales data effectively. Whether you need to calculate total revenue, filter sales by products or regions, or observe revenue trends over time, this API provides robust functionality to meet your needs.
 
-```bash
-# unit tests
-$ npm run test
+It is built using NestJS, a progressive framework for building scalable server-side applications, and uses PostgreSQL for data storage.
 
-# e2e tests
-$ npm run test:e2e
+localhost:3000/data-loader/load-data?fileName=data.csv => To load the data from the csv file
 
-# test coverage
-$ npm run test:cov
-```
+Cron will run daily 2AM to update the data fro csv to database.
 
-## Deployment
+Features
+Total Revenue Calculation: Compute total revenue within a specified date range.
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+Filter by Product: Retrieve revenue data filtered by specific products.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Filter by Category: Analyze revenue based on product categories.
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+Filter by Region: View revenue data segmented by geographic regions.
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+Revenue Trends: Generate monthly or yearly revenue trends over a specified date range.
 
-## Resources
+Technologies Used
+This project leverages the following technologies:
 
-Check out a few resources that may come in handy when working with NestJS:
+NestJS: Framework for building efficient and scalable server-side applications.
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+TypeORM: ORM for TypeScript and JavaScript that supports multiple databases.
 
-## Support
+PostgreSQL: Relational database system used for storing sales data.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Swagger: Tool for documenting APIs.
 
-## Stay in touch
+Postman: Used for testing and sharing API requests.
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Installation
+Prerequisites
+Ensure you have the following installed:
 
-## License
+Node.js (v14 or higher)
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+npm (Node Package Manager)
+
+PostgreSQL database
+
+Steps to Install
+Clone the repository:
+
+bash
+git clone https://github.com/sagarvaghela4041/sales-data-api.git
+Navigate to the project directory:
+
+bash
+cd sales-data-api
+Install dependencies:
+
+bash
+npm install
+Set up environment variables:
+Create a .env file in the root directory with the following configuration:
+
+text
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_USERNAME=your_db_username
+DATABASE_PASSWORD=your_db_password
+DATABASE_NAME=sales_data
+
+
+
+npm run start:dev
+Usage
+Once the application is running, you can access it at http://localhost:3000. Use tools like Postman or curl to interact with the API endpoints.
+
+Swagger Documentation
+The API documentation is available at:
+
+text
+{base_path}/api-docs
+For local development, this will typically be:
+
+text
+http://localhost:3000/api-docs
+Swagger provides detailed information about all available endpoints, their parameters, and expected responses.
+
+API Endpoints
+1. Total Revenue Calculation
+Endpoint: GET /revenue/total
+
+Query Parameters:
+
+startDate: Start date for revenue calculation (YYYY-MM-DD).
+
+endDate: End date for revenue calculation (YYYY-MM-DD).
+
+2. Total Revenue by Product
+Endpoint: GET /revenue/by-product
+
+Query Parameters:
+
+startDate: Start date for calculation.
+
+endDate: End date for calculation.
+
+3. Total Revenue by Category
+Endpoint: GET /revenue/by-category
+
+Query Parameters:
+
+startDate: Start date for calculation.
+
+endDate: End date for calculation.
+
+4. Total Revenue by Region
+Endpoint: GET /revenue/by-region
+
+Query Parameters:
+
+startDate: Start date for calculation.
+
+endDate: End date for calculation.
+
+region: Name of the region to filter by.
+
+5. Revenue Trends Over Time
+Endpoint: GET /revenue/trends
+
+Query Parameters:
+
+startDate: Start date for trend analysis.
+
+endDate: End date for trend analysis.
+
+Postman Collection
+To make it easier to test the API, I've included a Postman collection with pre-configured requests for all endpoints.
+
+How to Use the Collection:
+Download the attached Postman collection file (Sales_Data_API.postman_collection.json).
+
+Open Postman and import the collection:
+
+Go to File > Import, select the JSON file, and click "Import."
+
+Update base URLs in requests if necessary (e.g., replace {base_path} with your local or deployed URL).
+
+Use Postman to send requests and view responses.
+
