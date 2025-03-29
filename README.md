@@ -1,171 +1,170 @@
-Sales Data API
-The Sales Data API is a RESTful API built with NestJS to help manage and analyze sales data efficiently. It provides endpoints for calculating total revenue, filtering by product, category, and region, and generating revenue trends over time.
+# Sales Data API
+
+The **Sales Data API** is a RESTful API built with **NestJS** to help manage and analyze sales data efficiently. It provides endpoints for calculating total revenue, filtering by product, category, and region, and generating revenue trends over time.
 
 This README provides detailed instructions on how to set up, use, and explore the API.
 
-Table of Contents
-Overview
+---
 
-Features
+## Table of Contents
 
-Technologies Used
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Postman Collection](#postman-collection)
+- [Contributing](#contributing)
+- [License](#license)
 
-Installation
+---
 
-Usage
+## Overview
 
-API Endpoints
-
-Postman Collection
-
-Contributing
-
-License
-
-Overview
 The Sales Data API is designed to help businesses analyze their sales data effectively. Whether you need to calculate total revenue, filter sales by products or regions, or observe revenue trends over time, this API provides robust functionality to meet your needs.
 
-It is built using NestJS, a progressive framework for building scalable server-side applications, and uses PostgreSQL for data storage.
+It is built using **NestJS**, a progressive framework for building scalable server-side applications, and uses **PostgreSQL** for data storage.
 
-Data Loading
+### Data Loading
+
 To load data from a CSV file, use the following endpoint:
+http://localhost:3000/data-loader/load-data?fileName=data.csv
 
-text
-localhost:3000/data-loader/load-data?fileName=data.csv
-A cron job runs daily at 2 AM to update the data from the CSV file to the database.
 
-Features
-Total Revenue Calculation: Compute total revenue within a specified date range.
+A cron job runs daily at **2 AM** to update the data from the CSV file to the database.
 
-Filter by Product: Retrieve revenue data filtered by specific products.
+---
 
-Filter by Category: Analyze revenue based on product categories.
+## Features
 
-Filter by Region: View revenue data segmented by geographic regions.
+- **Total Revenue Calculation**: Compute total revenue within a specified date range.
+- **Filter by Product**: Retrieve revenue data filtered by specific products.
+- **Filter by Category**: Analyze revenue based on product categories.
+- **Filter by Region**: View revenue data segmented by geographic regions.
+- **Revenue Trends**: Generate monthly or yearly revenue trends over a specified date range.
 
-Revenue Trends: Generate monthly or yearly revenue trends over a specified date range.
+---
 
-Technologies Used
+## Technologies Used
+
 This project leverages the following technologies:
 
-NestJS: Framework for building efficient and scalable server-side applications.
+- **NestJS**: Framework for building efficient and scalable server-side applications.
+- **TypeORM**: ORM for TypeScript and JavaScript that supports multiple databases.
+- **PostgreSQL**: Relational database system used for storing sales data.
+- **Swagger**: Tool for documenting APIs.
+- **Postman**: Used for testing and sharing API requests.
 
-TypeORM: ORM for TypeScript and JavaScript that supports multiple databases.
+---
 
-PostgreSQL: Relational database system used for storing sales data.
+## Installation
 
-Swagger: Tool for documenting APIs.
+### Prerequisites
 
-Postman: Used for testing and sharing API requests.
-
-Installation
-Prerequisites
 Ensure you have the following installed:
 
-Node.js (v14 or higher)
+- Node.js (v14 or higher)
+- npm (Node Package Manager)
+- PostgreSQL database
 
-npm (Node Package Manager)
+### Steps to Install
 
-PostgreSQL database
+1. Clone the repository:
+```git clone https://github.com/sagarvaghela4041/sales-data-api.git```
 
-Steps to Install
-Clone the repository:
 
-bash
-git clone https://github.com/sagarvaghela4041/sales-data-api.git
-Navigate to the project directory:
+2. Navigate to the project directory:
+```cd sales-data-api```
 
-bash
-cd sales-data-api
-Install dependencies:
 
-bash
-npm install
-Set up environment variables:
-Create a .env file in the root directory with the following configuration:
+3. Install dependencies:
+```npm install```
 
-text
+
+4. Set up environment variables:
+Create a `.env` file in the root directory with the following configuration:
+
+```
 DATABASE_HOST=localhost
 DATABASE_PORT=5432
 DATABASE_USERNAME=your_db_username
 DATABASE_PASSWORD=your_db_password
 DATABASE_NAME=sales_data
-Start the application:
 
-bash
-npm run start:dev
-Usage
-Once the application is running, you can access it at http://localhost:3000. Use tools like Postman or curl to interact with the API endpoints.
+```
 
-Swagger Documentation
+
+5. Start the application:
+```npm run start:dev```
+
+
+---
+
+## Usage
+
+Once the application is running, you can access it at `http://localhost:3000`. Use tools like Postman or curl to interact with the API endpoints.
+
+### Swagger Documentation
+
 The API documentation is available at:
+```http://localhost:3000/api-docs```
 
-text
-{base_path}/api-docs
-For local development, this will typically be:
-
-text
-http://localhost:3000/api-docs
 Swagger provides detailed information about all available endpoints, their parameters, and expected responses.
 
-API Endpoints
-1. Total Revenue Calculation
-Endpoint: GET /revenue/total
+---
 
-Query Parameters:
+## API Endpoints
 
-startDate: Start date for revenue calculation (YYYY-MM-DD).
+### 1. Total Revenue Calculation
 
-endDate: End date for revenue calculation (YYYY-MM-DD).
+- **Endpoint**: `GET /revenue/total`
+- **Query Parameters**:
+  - `startDate`: Start date for revenue calculation (YYYY-MM-DD).
+  - `endDate`: End date for revenue calculation (YYYY-MM-DD).
 
-2. Total Revenue by Product
-Endpoint: GET /revenue/by-product
+### 2. Total Revenue by Product
 
-Query Parameters:
+- **Endpoint**: `GET /revenue/by-product`
+- **Query Parameters**:
+  - `startDate`: Start date for calculation.
+  - `endDate`: End date for calculation.
 
-startDate: Start date for calculation.
+### 3. Total Revenue by Category
 
-endDate: End date for calculation.
+- **Endpoint**: `GET /revenue/by-category`
+- **Query Parameters**:
+  - `startDate`: Start date for calculation.
+  - `endDate`: End date for calculation.
 
-3. Total Revenue by Category
-Endpoint: GET /revenue/by-category
+### 4. Total Revenue by Region
 
-Query Parameters:
+- **Endpoint**: `GET /revenue/by-region`
+- **Query Parameters**:
+  - `startDate`: Start date for calculation.
+  - `endDate`: End date for calculation.
+  - `region`: Name of the region to filter by.
 
-startDate: Start date for calculation.
+### 5. Revenue Trends Over Time
 
-endDate: End date for calculation.
+- **Endpoint**: `GET /revenue/trends`
+- **Query Parameters**:
+  - `startDate`: Start date for trend analysis.
+  - `endDate`: End date for trend analysis.
 
-4. Total Revenue by Region
-Endpoint: GET /revenue/by-region
+---
 
-Query Parameters:
+## Postman Collection
 
-startDate: Start date for calculation.
-
-endDate: End date for calculation.
-
-region: Name of the region to filter by.
-
-5. Revenue Trends Over Time
-Endpoint: GET /revenue/trends
-
-Query Parameters:
-
-startDate: Start date for trend analysis.
-
-endDate: End date for trend analysis.
-
-Postman Collection
 To facilitate testing of the API, a Postman collection with pre-configured requests for all endpoints is included.
 
-How to Use the Collection:
-Download the attached Postman collection file (Sales_Data_API.postman_collection.json).
+### How to Use the Collection:
 
-Open Postman and import the collection:
+1. Download the attached Postman collection file (`Sales_Data_API.postman_collection.json`).
+2. Open Postman and import the collection:
+   - Go to **File > Import**, select the JSON file, and click "Import."
+3. Update base URLs in requests if necessary (e.g., replace `{base_path}` with your local or deployed URL).
+4. Use Postman to send requests and view responses.
 
-Go to File > Import, select the JSON file, and click "Import."
+---
 
-Update base URLs in requests if necessary (e.g., replace {base_path} with your local or deployed URL).
-
-Use Postman to send requests and view responses.
